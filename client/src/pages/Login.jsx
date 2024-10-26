@@ -45,203 +45,215 @@ const Login = () => {
   };
 
   return (
-    <Container
-      component={"main"}
-      maxWidth="xs"
-      sx={{
-        marginTop: 10,
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
+    <div
+      style={{
+        height: "100vh",
+        background:
+          "linear-gradient(25deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 20%, rgba(0,212,255,1) 100%)",
       }}
     >
-      <Paper
-        elevation={3}
+      <Container
+        component={"main"}
+        maxWidth="xs"
         sx={{
-          padding: 5,
+          paddingTop: 15,
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
         }}
       >
-        {isLogin ? (
-          <>
-            <Typography variant="h5">Login</Typography>
-            <form
-              style={{
-                marginTop: 2,
-                width: "100%",
-              }}
-              onSubmit={handleLogin}
-            >
-              <TextField
-                required
-                fullWidth
-                label="Username"
-                margin="normal"
-                variant="outlined"
-                value={username.value}
-                onChange={username.changeHandler}
-              />
-              <TextField
-                required
-                fullWidth
-                label="Password"
-                type="password"
-                margin="normal"
-                variant="outlined"
-                value={password.value}
-                onChange={password.changeHandler}
-              />
-              <Button
-                sx={{
+        <Paper
+          elevation={3}
+          sx={{
+            padding: 5,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
+          {isLogin ? (
+            <>
+              <Typography variant="h5">Login</Typography>
+              <form
+                style={{
                   marginTop: 2,
+                  width: "100%",
                 }}
-                variant="contained"
-                color="primary"
-                type="submit"
-                fullWidth
+                onSubmit={handleLogin}
               >
-                Login
-              </Button>
-              <Typography
-                variant="body2"
-                sx={{
-                  marginTop: 2,
-                }}
-              >
-                Don't have an account?{" "}
-                <Button
-                  color="primary"
-                  onClick={toggleLogin}
-                  style={{ textTransform: "none" }}
-                >
-                  Sign Up
-                </Button>
-              </Typography>
-            </form>
-          </>
-        ) : (
-          <>
-            <Typography variant="h5">Sign Up</Typography>
-            <form
-              style={{
-                marginTop: 2,
-                width: "100%",
-              }}
-              onSubmit={handleSignUp}
-            >
-              <Stack position={"relative"} width={"10rem"} margin={"auto"}>
-                <Avatar
-                  sx={{
-                    width: "10rem",
-                    height: "10rem",
-                    backgroundColor: "primary.main",
-                    objectFit: "contain",
-                  }}
-                  src={avatar.preview}
+                <TextField
+                  required
+                  fullWidth
+                  label="Username"
+                  margin="normal"
+                  variant="outlined"
+                  value={username.value}
+                  onChange={username.changeHandler}
                 />
-                <IconButton
-                  sx={{
-                    position: "absolute",
-                    bottom: 0,
-                    right: 0,
-                    backgroundColor: "white",
-                  }}
-                  component="label"
-                >
-                  <>
-                    <CameraAlt />
-                    <VisullyHiddenInput
-                      type="file"
-                      onChange={avatar.changeHandler}
-                    />
-                  </>
-                </IconButton>
-              </Stack>
-              {showError && (
-                <Typography paddingLeft={"6rem"} variant="body2" color="error">
-                  {avatar.error}
-                </Typography>
-              )}
-              <TextField
-                required
-                fullWidth
-                label="Name"
-                margin="normal"
-                variant="outlined"
-                value={name.value}
-                onChange={name.changeHandler}
-              />
-              <TextField
-                required
-                fullWidth
-                label="Bio"
-                margin="normal"
-                variant="outlined"
-                value={bio.value}
-                onChange={bio.changeHandler}
-              />
-              <TextField
-                required
-                fullWidth
-                label="Username"
-                margin="normal"
-                variant="outlined"
-                value={username.value}
-                onChange={username.changeHandler}
-              />
-              {username.error && (
-                <Typography variant="body2" color="error">
-                  {username.error}
-                </Typography>
-              )}
-              <TextField
-                required
-                fullWidth
-                label="Password"
-                type="password"
-                margin="normal"
-                variant="outlined"
-                value={password.value}
-                onChange={password.changeHandler}
-              />
-              {password.error && (
-                <Typography variant="body2" color="error">
-                  {password.error}
-                </Typography>
-              )}
-              <Button
-                sx={{
-                  marginTop: 2,
-                }}
-                variant="contained"
-                color="primary"
-                type="submit"
-                fullWidth
-              >
-                Sign Up
-              </Button>
-              <Typography
-                variant="body2"
-                sx={{
-                  marginTop: 2,
-                }}
-              >
-                Already have an account?{" "}
+                <TextField
+                  required
+                  fullWidth
+                  label="Password"
+                  type="password"
+                  margin="normal"
+                  variant="outlined"
+                  value={password.value}
+                  onChange={password.changeHandler}
+                />
                 <Button
+                  sx={{
+                    marginTop: 2,
+                  }}
+                  variant="contained"
                   color="primary"
-                  onClick={toggleLogin}
-                  style={{ textTransform: "none" }}
+                  type="submit"
+                  fullWidth
                 >
                   Login
                 </Button>
-              </Typography>
-            </form>
-          </>
-        )}
-      </Paper>
-    </Container>
+                <Typography
+                  variant="body2"
+                  sx={{
+                    marginTop: 2,
+                  }}
+                >
+                  Don&apos;t have an account?{" "}
+                  <Button
+                    color="primary"
+                    onClick={toggleLogin}
+                    style={{ textTransform: "none" }}
+                  >
+                    Sign Up
+                  </Button>
+                </Typography>
+              </form>
+            </>
+          ) : (
+            <>
+              <Typography variant="h5">Sign Up</Typography>
+              <form
+                style={{
+                  marginTop: 2,
+                  width: "100%",
+                }}
+                onSubmit={handleSignUp}
+              >
+                <Stack position={"relative"} width={"10rem"} margin={"auto"}>
+                  <Avatar
+                    sx={{
+                      width: "10rem",
+                      height: "10rem",
+                      backgroundColor: "primary.main",
+                      objectFit: "contain",
+                    }}
+                    src={avatar.preview}
+                  />
+                  <IconButton
+                    sx={{
+                      position: "absolute",
+                      bottom: 0,
+                      right: 0,
+                      backgroundColor: "white",
+                    }}
+                    component="label"
+                  >
+                    <>
+                      <CameraAlt />
+                      <VisullyHiddenInput
+                        type="file"
+                        onChange={avatar.changeHandler}
+                      />
+                    </>
+                  </IconButton>
+                </Stack>
+                {showError && (
+                  <Typography
+                    paddingLeft={"6rem"}
+                    variant="body2"
+                    color="error"
+                  >
+                    {avatar.error}
+                  </Typography>
+                )}
+                <TextField
+                  required
+                  fullWidth
+                  label="Name"
+                  margin="normal"
+                  variant="outlined"
+                  value={name.value}
+                  onChange={name.changeHandler}
+                />
+                <TextField
+                  required
+                  fullWidth
+                  label="Bio"
+                  margin="normal"
+                  variant="outlined"
+                  value={bio.value}
+                  onChange={bio.changeHandler}
+                />
+                <TextField
+                  required
+                  fullWidth
+                  label="Username"
+                  margin="normal"
+                  variant="outlined"
+                  value={username.value}
+                  onChange={username.changeHandler}
+                />
+                {username.error && (
+                  <Typography variant="body2" color="error">
+                    {username.error}
+                  </Typography>
+                )}
+                <TextField
+                  required
+                  fullWidth
+                  label="Password"
+                  type="password"
+                  margin="normal"
+                  variant="outlined"
+                  value={password.value}
+                  onChange={password.changeHandler}
+                />
+                {password.error && (
+                  <Typography variant="body2" color="error">
+                    {password.error}
+                  </Typography>
+                )}
+                <Button
+                  sx={{
+                    marginTop: 2,
+                  }}
+                  variant="contained"
+                  color="primary"
+                  type="submit"
+                  fullWidth
+                >
+                  Sign Up
+                </Button>
+                <Typography
+                  variant="body2"
+                  sx={{
+                    marginTop: 2,
+                  }}
+                >
+                  Already have an account?{" "}
+                  <Button
+                    color="primary"
+                    onClick={toggleLogin}
+                    style={{ textTransform: "none" }}
+                  >
+                    Login
+                  </Button>
+                </Typography>
+              </form>
+            </>
+          )}
+        </Paper>
+      </Container>
+    </div>
   );
 };
 

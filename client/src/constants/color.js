@@ -1,0 +1,12 @@
+export const sand = "#E6C767";
+export const red = "#ff4949";
+export const blue = "#4949ff";
+export const yellow = "#fffa49";
+export const black = "#000000";
+export const white = "#ffffff";
+export const gray = "#808080";
+export const lightgray = "#d3d3d3";
+export const darkgray = "#a9a9a9";
+export const lightblue = "#add8e6";
+export const darkblue = "#00008b";
+export const lightgreen = "#90ee90";
