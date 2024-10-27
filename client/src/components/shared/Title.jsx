@@ -7,6 +7,7 @@ const Title = ({
   title = "Chatopia",
   description = "This is a chat-app named `Chatopia`",
 }) => {
+
   return (
     <Helmet>
       <title>{title}</title>

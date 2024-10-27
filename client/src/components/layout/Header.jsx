@@ -2,6 +2,7 @@
 /* eslint-disable no-unused-vars */
 import {
   AppBar,
+  Backdrop,
   Box,
   IconButton,
   Toolbar,
@@ -135,17 +136,17 @@ const Header = () => {
         </AppBar>
       </Box>
       {isSearchOpen && (
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<Backdrop open />}>
           <SearchDailog />
         </Suspense>
       )}
        {isNotificationOpen && (
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<Backdrop open />}>
           <NewNotification />
         </Suspense>
       )}
        {isNewGroupOpen && (
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<Backdrop open />}>
           <NewGroup />
         </Suspense>
       )}
