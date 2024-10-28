@@ -83,3 +83,20 @@ export const sampleUsers = [
     avatar: "https://randomuser.me/api",
   },
 ];
+
+export const sampleNotifications = [
+  {
+    sender: {
+      name: "John Doe",
+      avatar: "https://randomuser.me/api",
+    },
+    _id: "1",
+  },
+  {
+    sender: {
+      name: "Jane Doe",
+      avatar: "https://randomuser.me/api",
+    },
+    _id: "2",
+  },
+];
