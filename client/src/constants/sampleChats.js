@@ -70,3 +70,16 @@ export const chats = [
     members: ["5", "6", "7", "8"],
   },
 ];
+
+export const sampleUsers = [
+  {
+    name: "John Doe",
+    _id: "1",
+    avatar: "https://randomuser.me/api",
+  },
+  {
+    name: "Jane Doe",
+    _id: "2",
+    avatar: "https://randomuser.me/api",
+  },
+];
