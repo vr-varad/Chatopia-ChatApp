@@ -37,7 +37,7 @@ const ChatItem = ({
           position: "relative",
         }}
       >
-        <AvatarCard avatar={avatar || ["https://picsum.photos/200","https://picsum.photos/200 "]} />
+        <AvatarCard avatar={avatar || ["https://picsum.photos/200"]} />
         <Stack>
           <Typography>{name}</Typography>
           {newMessageAlert && (
