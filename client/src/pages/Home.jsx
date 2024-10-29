@@ -3,9 +3,21 @@
 import React from "react";
 
 import AppLayout from "../components/layout/AppLayout";
+import { Box, Typography } from "@mui/material";
 
 const Home = () => {
-  return <div>Home</div>;
+  return (
+    <Box bgcolor={"greenyellow"} height={"100%"}>
+      <Typography
+        p={"2rem"}
+        variant="h5"
+        textAlign={"center"}
+        fontWeight={"bold"}
+      >
+        Select a Friend to chat with
+      </Typography>
+    </Box>
+  );
 };
 
 export default AppLayout()(Home);
