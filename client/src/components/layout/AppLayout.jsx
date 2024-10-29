@@ -37,13 +37,13 @@ const AppLayout = () => (WrappedComponent) => {
               handleDeleteChat={handleDeleteChat}
             />
           </Grid2>
-          <Grid2 size={{ xs: 7, md: 6 }}>
+          <Grid2 size={{ xs: 7, md: 6 }} height={"95%"}>
             <WrappedComponent {...props} />
           </Grid2>
           <Grid2
             size={3}
             sx={{
-              backgroundColor: "lightblue",
+              backgroundColor: "#D8D2C2",
               display: { xs: "none", sm: "none", md: "block" },
             }}
           >

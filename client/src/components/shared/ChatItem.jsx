@@ -30,9 +30,9 @@ const ChatItem = ({
           alignItems: "center",
           flexDirection: "row",
           padding: "1rem",
-          backgroundColor: sameSender ? "black" : "unset",
+          backgroundColor: sameSender ? "greenyellow" : "unset",
           justifyContent: "space-between",
-          color: sameSender ? "white" : "inherit",
+          color: sameSender ? "black" : "inherit",
           gap: "1rem",
           position: "relative",
         }}
