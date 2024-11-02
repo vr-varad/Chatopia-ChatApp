@@ -51,7 +51,7 @@ const AppLayout = () => (WrappedComponent) => {
           </Grid2>
         </Grid2>
 
-        <Footer />
+        {/* <Footer /> */}
       </>
     );
   };

@@ -8,6 +8,14 @@ import {
   Send as SendIcon,
 } from "@mui/icons-material";
 import { InputBox } from "../components/styles/StyledComponent";
+import FileMenu from "../components/dialogs/FileMenu";
+import { sampleMessage } from "../constants/sampleChats";
+import MessageComponent from "../components/shared/MessageComponent";
+
+const user = {
+  _id: "1",
+  name: "John Doe",
+};
 
 const Chat = () => {
   const containerRef = useRef(null);
@@ -26,11 +34,13 @@ const Chat = () => {
           overflowX: "hidden",
         }}
       >
-        {/* Messages */}
+        {sampleMessage.map((message, index) => (
+          <MessageComponent message={message} user={user} key={index} />
+        ))}
       </Stack>
       <form
         style={{
-          height: "7%",
+          height: "8%",
         }}
       >
         <Stack
@@ -40,28 +50,33 @@ const Chat = () => {
           padding={"1rem"}
           position={"relative"}
         >
-          <IconButton sx={{
-            position: "absolute",
-            left: "1.5rem",
-            
-          }}>
+          <IconButton
+            sx={{
+              position: "absolute",
+              left: "1.5rem",
+            }}
+          >
             <AttachFileIcon />
           </IconButton>
           <InputBox placeholder="Type Here....." />
-          <IconButton type="submit" sx={{
-            backgroundColor: "#FFF1DB",
-            color: "black",
-            marginLeft: "1rem",
-            padding: "0.5rem",
-            "&:hover": {
-              backgroundColor: "#D4BDAC",
-              color: "white",
-            },
-          }}>
+          <IconButton
+            type="submit"
+            sx={{
+              backgroundColor: "#FFF1DB",
+              color: "black",
+              marginLeft: "1rem",
+              padding: "0.5rem",
+              "&:hover": {
+                backgroundColor: "#D4BDAC",
+                color: "white",
+              },
+            }}
+          >
             <SendIcon />
           </IconButton>
         </Stack>
       </form>
+      {/* <FileMenu /> */}
     </>
   );
 };

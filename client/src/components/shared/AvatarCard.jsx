@@ -2,8 +2,9 @@
 /* eslint-disable no-unused-vars */
 import { Avatar, AvatarGroup, Box, Stack } from "@mui/material";
 import React from "react";
+import { transformImage } from "../../lib/features";
 
-// TODO : Transform 
+// TODO : Transform
 
 const AvatarCard = ({ avatar = [], max = 4 }) => {
   return (
@@ -13,16 +14,16 @@ const AvatarCard = ({ avatar = [], max = 4 }) => {
           {avatar.map((item, index) => (
             <Avatar
               key={Math.random() * index}
-              src={item}
+              src={transformImage(item)}
               alt="avatar"
               sx={{
                 width: "3rem",
                 height: "3rem",
                 position: "absolute",
                 left: {
-                    xs: `${index + 0.5}rem`,
-                    sm: `${index}rem`,
-                }
+                  xs: `${index + 0.5}rem`,
+                  sm: `${index}rem`,
+                },
               }}
             />
           ))}

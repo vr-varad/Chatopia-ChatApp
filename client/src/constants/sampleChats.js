@@ -100,3 +100,38 @@ export const sampleNotifications = [
     _id: "2",
   },
 ];
+
+export const sampleMessage = [
+  {
+    attachments: [
+      {
+        public_id: "1",
+        url: "https://randomuser.me/api",
+      },
+    ],
+    content: "Hello World",
+    _id: "1",
+    sender: {
+      name: "John Doe",
+      _id: "2",
+    },
+    chat: "chatId",
+    createdAt: "2021-09-20T00:00:00.000Z",
+  },
+  {
+    attachments: [
+      {
+        public_id: "1",
+        url: "https://dummyimage.com/300.png",
+      },
+    ],
+    content: "Hello World",
+    _id: "2",
+    sender: {
+      name: "Jabe Doe",
+      _id: "1",
+    },
+    chat: "avrwvawv",
+    createdAt: "2021-09-20T00:00:00.000Z",
+  },
+];
