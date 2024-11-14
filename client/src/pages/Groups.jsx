@@ -27,6 +27,9 @@ import { Link } from "../components/styles/StyledComponent";
 import AvatarCard from "../components/shared/AvatarCard";
 import { sampleUsers } from "../constants/sampleChats";
 const ConfirmDelete = lazy(() => import("../components/dialogs/ConfirmDelete"));
+const AddMember = lazy(() => import("../components/dialogs/AddMember"));
+
+const isAddMember = false;
 
 const Groups = () => {
   const chatId = useSearchParams()[0].get("group");
@@ -37,6 +40,7 @@ const Groups = () => {
   const [groupName, setGroupName] = useState("");
   const [groupNameUpdated, setGroupNameUpdated] = useState("");
   const [confirmDeleteDialog, setConfirmDeleteDialog] = useState(false);
+  const [confirmAddMemberDialog, setConfirmAddMemberDialog] = useState(false);
 
   const navigateBack = () => {
     navigate(-1);
@@ -63,9 +67,14 @@ const Groups = () => {
     setConfirmDeleteDialog(false);
   };
 
-  const openAddMemberHandler = () => {
-    console.log("Add Member");
+  const openConfirmAddMemberHandler = () => {
+    setConfirmAddMemberDialog(true);
   };
+
+  const closeConfirmAddMemberHandler = () => {
+    setConfirmAddMemberDialog(false);
+  };
+
 
   const deleteHandler = () => {
     console.log("Delete Group");
@@ -213,12 +222,20 @@ const Groups = () => {
             size="large"
             variant="contained"
             startIcon={<AddIcon />}
-            onClick={openAddMemberHandler}
+            onClick={openConfirmAddMemberHandler}
           >
             Add Member
           </Button>
         </Stack>
       </Grid2>
+      {confirmAddMemberDialog && (
+        <Suspense fallback={<Backdrop open />}>
+          <AddMember
+            open={confirmAddMemberDialog}
+            handleClose={closeConfirmAddMemberHandler}
+          />
+        </Suspense>
+      )}
       {confirmDeleteDialog && (
         <Suspense fallback={<Backdrop open />}>
           <ConfirmDelete
